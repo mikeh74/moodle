@@ -1,7 +1,12 @@
 <?php  // Moodle configuration file
 
-// Config file exmple for Docker setup using environment variables
-// 
+// Config file example for Docker setup using environment variables
+// Copy this file to config.php and set the required environment variables
+// or modify the default values as needed.
+
+// This is an example configuration file for Moodle running in a Docker
+// container or any other environment where configuration via environment
+// variables is preferred.
 
 unset($CFG);
 global $CFG;

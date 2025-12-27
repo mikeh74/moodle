@@ -68,7 +68,9 @@ Create a `.env` file in the project root with the following variables:
 # Port for accessing Moodle (default: 8080)
 DOCKER_APP_PORT=8080
 
-# Add any other Moodle-specific environment variables here
+# Add any other Moodle-specific environment variables here, look at the example file:
+config.php.docker
+
 ```
 
 ### Moodle Configuration

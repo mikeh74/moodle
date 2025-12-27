@@ -3,14 +3,14 @@ services:
   moodle:
     build:
       context: .
-      target: production
-    image: moodle:4.5.8
+      target: development
+    image: moodle:dev
     restart: on-failure
     ports:
       - "${DOCKER_APP_PORT:-8080}:80"
     volumes:
+      - ./:/var/www/html
       - moodledata:/var/www/moodledata
-      - ./config.php:/var/www/html/config.php
     env_file:
       - .env
     depends_on:

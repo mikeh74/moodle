@@ -27,10 +27,17 @@ The Docker setup provides two environments:
 
 - Docker Desktop (or Docker Engine + Docker Compose)
 - `.env` file with environment variables (see Configuration section)
+- `config.php` (example file: config.php.docker)
 
 ## Quick Start
 
 ### Development Environment
+
+```bash
+# only required once at initial setup
+cp .env.exaple .env
+cp config.php.docker config.php
+```
 
 ```bash
 # Start development environment with live code mounting

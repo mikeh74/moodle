@@ -16,7 +16,8 @@ services:
     networks:
       - moodle-network
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   db:
     image: mysql:8.0
     restart: on-failure
@@ -31,6 +32,12 @@ services:
       - db_data:/var/lib/mysql
     networks:
       - moodle-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
 volumes:
   db_data:
   moodledata:

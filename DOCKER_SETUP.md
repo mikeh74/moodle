@@ -41,13 +41,13 @@ cp config.php.docker config.php
 
 ```bash
 # Start development environment with live code mounting
-docker compose -f docker-compose.dev.yml up -d
+docker compose -f docker-compose.dev.yaml up -d
 
 # View logs
-docker compose -f docker-compose.dev.yml logs -f
+docker compose -f docker-compose.dev.yaml logs -f
 
 # Stop services
-docker compose -f docker-compose.dev.yml down
+docker compose -f docker-compose.dev.yaml down
 ```
 
 The Moodle site will be available at `http://localhost:8080` (or the port specified in `DOCKER_APP_PORT`).
@@ -57,6 +57,9 @@ The Moodle site will be available at `http://localhost:8080` (or the port specif
 ```bash
 # Build and start production environment
 docker compose up -d
+
+# Or build manually with specific target and tag
+docker build --target production -t moodle:latest .
 
 # View logs
 docker compose logs -f
@@ -205,10 +208,12 @@ docker compose logs -f db
 ### Rebuilding Images
 
 ```bash
-# Development
+# Development (target development stage)
+docker build --target development -t moodle:dev .
 docker compose -f docker-compose.dev.yml build --no-cache
 
-# Production
+# Production (target production stage)
+docker build --target production -t moodle:latest .
 docker compose build --no-cache
 ```
 
@@ -268,8 +273,12 @@ DOCKER_APP_PORT=8081
 Production images bake in the code, so rebuild after changes:
 
 ```bash
+# Using docker compose
 docker compose build
 docker compose up -d
+
+# Or with explicit target and tag
+docker build --target production -t moodle:latest .
 ```
 
 ## Performance Optimization

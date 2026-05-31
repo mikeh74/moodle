@@ -13,7 +13,7 @@ The Docker setup provides two environments:
 ### Services
 
 1. **moodle** - PHP 8.2 with Apache web server
-2. **db** - MySQL 8.0 database
+2. **db** - MySQL 8.4 database
 
 ### Docker Files
 

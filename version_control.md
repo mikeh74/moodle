@@ -323,7 +323,7 @@ jobs:
 
 ## Maintenance Schedule
 
-- **Weekly**: Check for upstream security updates
+- **Every Two Weeks**: Check for upstream security updates
 - **Monthly**: Sync minor upstream changes
 - **Quarterly**: Review and update custom code for compatibility
 - **Annually**: Plan major version upgrades
